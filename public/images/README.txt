@@ -1,0 +1,1 @@
+Place actual VIA logo, machinery photos, team photos and plant/project images in this folder when supplied. The current website is functional without them and uses CSS-generated visuals.
