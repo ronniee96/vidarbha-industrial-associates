@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Vidarbha Industrial Associates | Industrial Cleaning & Maintenance",
     description: "High-pressure hydro jetting, chemical cleaning, retubing, testing and industrial maintenance across India.",
-    url: "https://vidarbhaindustrialassociates.com",
+    url: "https://www.vidarbhaindustrialassociates.com",
     siteName: "Vidarbha Industrial Associates",
     images: [{ url: "/social-preview.svg", width: 1200, height: 630, alt: "Vidarbha Industrial Associates industrial services" }],
     locale: "en_IN",
