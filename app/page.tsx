@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   ArrowRight,
@@ -144,6 +144,16 @@ export default function Home() {
   const [sending, setSending] = useState(false);
   const [fallback, setFallback] = useState("");
   const [error, setError] = useState("");
+  const [cookiesAccepted, setCookiesAccepted] = useState(false);
+
+  useEffect(() => {
+    setCookiesAccepted(localStorage.getItem("via-cookie-consent") === "accepted");
+  }, []);
+
+  function acceptCookies() {
+    localStorage.setItem("via-cookie-consent", "accepted");
+    setCookiesAccepted(true);
+  }
 
   const { scrollYProgress } = useScroll();
   const heroY = useTransform(scrollYProgress, [0, 0.25], [0, 100]);
@@ -415,6 +425,7 @@ export default function Home() {
               <label>Budget range<select name="budget" defaultValue=""><option value="">Prefer not to say</option><option>Under ₹1 lakh</option><option>₹1–5 lakh</option><option>₹5–25 lakh</option><option>₹25 lakh+</option><option>To be discussed</option></select></label>
             </div>
             <label>Requirement / tender details<textarea name="message" rows={5} placeholder="Equipment, scope, pressure requirement, shutdown date, tender reference, drawings, etc." /></label>
+            <div style={{ position: "absolute", left: "-10000px", width: 1, height: 1, overflow: "hidden" }} aria-hidden="true"><label>Website<input name="website" tabIndex={-1} autoComplete="off" /></label></div>
             <button className="btn btn-primary submit" disabled={sending}>
               {sending ? "Sending request..." : "Send Quote Request"} <ArrowRight size={18} />
             </button>
@@ -457,6 +468,7 @@ export default function Home() {
         </div>
         <div className="footer-bottom container">
           <span>© {new Date().getFullYear()} Vidarbha Industrial Associates. All rights reserved.</span>
+          <span><a href="/privacy-policy">Privacy Policy</a> · <a href="/terms-and-conditions">Terms &amp; Conditions</a></span>
           <span>Chandrapur, Maharashtra • Since 1997</span>
         </div>
       </footer>
