@@ -7,11 +7,11 @@ const schema = z.object({
   name: z.string().trim().min(2).max(100),
   email: z.string().email().max(160),
   phone: z.string().trim().regex(/^\+?[0-9 ()-]{7,30}$/, "Enter a valid phone number."),
-  company: z.string().max(120).optional().or(z.literal("")),
-  jobType: z.string().min(2).max(120),
-  location: z.string().max(160).optional().or(z.literal("")),
-  timeline: z.string().max(80).optional().or(z.literal("")),
-  budget: z.string().max(80).optional().or(z.literal("")),
+  company: z.string().trim().max(120).optional().or(z.literal("")),
+  jobType: z.string().trim().min(2).max(120),
+  location: z.string().trim().max(160).optional().or(z.literal("")),
+  timeline: z.string().trim().max(80).optional().or(z.literal("")),
+  budget: z.string().trim().max(80).optional().or(z.literal("")),
   message: z.string().trim().max(2000).optional().or(z.literal("")),
   website: z.string().max(0).optional().or(z.literal(""))
 });
@@ -19,8 +19,16 @@ const schema = z.object({
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const data = schema.parse(body);\n    if (data.website) { return NextResponse.json({ ok: false, error: "Unable to submit the request." }, { status: 400 }); }\n    const { website: _website, ...quoteData } = data;
+    const data = schema.parse(body);
 
+    if (data.website) {
+      return NextResponse.json(
+        { ok: false, error: "Unable to submit the request." },
+        { status: 400 }
+      );
+    }
+
+    const { website: _website, ...quoteData } = data;
     const quote = await prisma.quoteRequest.create({ data: quoteData });
 
     const [wa, email] = await Promise.allSettled([
@@ -61,7 +69,7 @@ ${quote.message || "Not provided"}`
       fallbackWhatsAppUrl: `https://wa.me/${fallbackNumber}?text=${fallbackText}`
     });
   } catch (error) {
-    console.error(error);
+    console.error("Quote submission failed:", error);
     return NextResponse.json(
       { ok: false, error: "Unable to submit the request. Please call or WhatsApp us directly." },
       { status: 400 }
