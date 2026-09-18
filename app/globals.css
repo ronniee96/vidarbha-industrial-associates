@@ -188,7 +188,13 @@ button, input, select, textarea { font: inherit; }
 .footer-brand { margin-bottom: 20px; }
 .footer h4 { color: #cbd6e2; font-size: 9px; letter-spacing: .18em; }
 .footer p svg { vertical-align: -3px; color: var(--blue); margin-right: 5px; }
-.footer-bottom a { color: #8fa0b3; text-decoration: underline; text-underline-offset: 3px; }\n.cookie-banner { position: fixed; z-index: 100; left: 20px; right: 20px; bottom: 20px; margin: 0 auto; max-width: 900px; padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; gap: 18px; background: #0b1829; color: #f5f8fb; border: 1px solid rgba(37,168,255,.35); box-shadow: 0 20px 60px rgba(0,0,0,.4); }\n.cookie-banner strong { font-size: 13px; }\n.cookie-banner p { margin: 4px 0 0; color: #c3cfdb; font-size: 11px; line-height: 1.5; }\n.cookie-banner a { color: #7cc9ff; text-decoration: underline; }\n.cookie-banner .btn { min-height: 40px; flex: 0 0 auto; }\n.footer-bottom { border-top: 1px solid rgba(255,255,255,.07); margin-top: 45px; padding-top: 18px; display: flex; justify-content: space-between; color: #526174; font-size: 9px; letter-spacing: .08em; }
+.footer-bottom a { color: #8fa0b3; text-decoration: underline; text-underline-offset: 3px; }
+.cookie-banner { position: fixed; z-index: 100; left: 20px; right: 20px; bottom: 20px; margin: 0 auto; max-width: 900px; padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; gap: 18px; background: #0b1829; color: #f5f8fb; border: 1px solid rgba(37,168,255,.35); box-shadow: 0 20px 60px rgba(0,0,0,.4); }
+.cookie-banner strong { font-size: 13px; }
+.cookie-banner p { margin: 4px 0 0; color: #c3cfdb; font-size: 11px; line-height: 1.5; }
+.cookie-banner a { color: #7cc9ff; text-decoration: underline; }
+.cookie-banner .btn { min-height: 40px; flex: 0 0 auto; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,.07); margin-top: 45px; padding-top: 18px; display: flex; justify-content: space-between; color: #526174; font-size: 9px; letter-spacing: .08em; }
 
 @media (max-width: 900px) {
   .nav { padding: 15px 20px; }
@@ -219,5 +225,6 @@ button, input, select, textarea { font: inherit; }
   .quote-wrap { gap: 45px; }
   .quote-form { padding: 20px; }
   .footer-grid { gap: 25px; }
-  .footer-bottom { flex-direction: column; gap: 8px; }\n  .cookie-banner { left: 10px; right: 10px; bottom: 10px; align-items: flex-start; }
+  .footer-bottom { flex-direction: column; gap: 8px; }
+  .cookie-banner { left: 10px; right: 10px; bottom: 10px; align-items: flex-start; }
 }
