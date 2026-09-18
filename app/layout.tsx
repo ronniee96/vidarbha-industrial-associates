@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Vidarbha Industrial Associates | Industrial Cleaning & Maintenance",
   description:
     "High-pressure hydro jetting, chemical cleaning, retubing, testing and industrial maintenance by Vidarbha Industrial Associates.",
-  metadataBase: new URL("https://vidarbhaindustrialassociates.com"),
+  metadataBase: new URL("https://www.vidarbhaindustrialassociates.com"),
   alternates: { canonical: "/" },
   openGraph: {
     title: "Vidarbha Industrial Associates | Industrial Cleaning & Maintenance",
